@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 
-/* ============================================================
-   مركز الحياة لخدمات التمريض المنزلي — Landing Page
-   React + Vite، ملف واحد، بدون مكتبات إضافية (CSS داخل الملف)
-   ============================================================ */
 
-/* ---------- إعدادات العلامة (عدّلها هنا فقط) ---------- */
+
+
 const BRAND = {
   name: "مركز الحياة",
   sub: "لخدمات التمريض المنزلي",
@@ -13,13 +10,13 @@ const BRAND = {
   slogan: "عناية تعيد الحياة إلى بيتك",
 };
 
-const PHONE_DISPLAY = "+966 50 000 0000"; // ← غيّره
-const PHONE_TEL = "+966500000000";        // ← غيّره
-const WA_NUMBER = "966500000000";         // ← غيّره (بدون +)
+const PHONE_DISPLAY = "+966 50 831 8134"; 
+const PHONE_TEL = "+966508318134";        
+const WA_NUMBER = "966508318134";         
 const waLink = (text = "") =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
-/* ---------- الصور (ضعها في public/images/) ---------- */
+
 const IMAGES = {
   hero: "/images/hero.jpg",
   about: "/images/about.jpg",
@@ -97,7 +94,7 @@ const REVIEWS = [
   { name: "عبدالله ح.", text: "سرعة في الاستجابة وأسعار واضحة من أول اتصال.", stars: 5 },
 ];
 
-/* ← عدّل المدن حسب نطاق عمل العميل */
+
 const AREAS = ["الرياض", "جدة", "مكة المكرمة", "الدمام"];
 const AREAS_NOTE = "ونصل إلى مناطق أخرى حسب التوفر";
 
@@ -112,7 +109,7 @@ const FAQ = [
 
 const SERVICE_OPTIONS = [...SERVICES.map((s) => s.title), "زيارة طارئة"];
 
-/* ---------- الأيقونات ---------- */
+
 const ICONS = {
   shield: <><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" /><path d="M9 12l2 2 4-4" /></>,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
@@ -170,7 +167,7 @@ function Logo({ size = 50, light = false }) {
   );
 }
 
-/* ---------- صورة مع بديل ---------- */
+
 function Photo({ src, alt, className = "", icon = "🩺", eager = false }) {
   const [failed, setFailed] = useState(false);
   if (failed) {
@@ -185,7 +182,7 @@ function Photo({ src, alt, className = "", icon = "🩺", eager = false }) {
   );
 }
 
-/* ---------- الراوتر (hash) ---------- */
+
 function useRoute() {
   const get = () => {
     const h = typeof window === "undefined" ? "" : window.location.hash.replace(/^#/, "");
@@ -203,7 +200,7 @@ function useRoute() {
   return route;
 }
 
-/* ---------- مكونات مشتركة ---------- */
+
 function SectionHead({ kicker, title, sub }) {
   return (
     <div className="sec-head">
